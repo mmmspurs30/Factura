@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factura Electrónica</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 20px;
+      }
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+          border: 1px solid #ccc;
+          padding: 20px;
+      }
+      .header {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .logo {
+          max-width: 200px;
+          height: auto;
+      }
+      .invoice-details {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+      }
+      th, td {
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: left;
+      }
+      .disclaimer {
+          margin-top: 20px;
+          font-size: 0.9em;
+      }
+      .signature {
+          margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="ruta_a_tu_logo.png" alt="Logo de la empresa" class="logo" />
+        <h1>Factura Electrónica</h1>
+      </div>
+
+      <div class="invoice-details">
+        <div>
+          <p>
+            <strong>Número de Factura:</strong> <span id="invoiceNumber"></span>
+          </p>
+          <p><strong>Fecha:</strong> <span id="invoiceDate"></span></p>
+        </div>
+        <div>
+          <p><strong>Remitente:</strong> <span id="sender"></span></p>
+          <p><strong>Beneficiario:</strong> <span id="recipient"></span></p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Descripción del Envío</th>
+            <th>Precio</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="description"></td>
+            <td id="price"></td>
+            <td id="amount"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="disclaimer">
+        <h3>Términos y Condiciones del Envío</h3>
+        <p>
+          Al firmar esta factura, usted acepta los términos y condiciones del
+          envío establecidos por nuestra empresa. Para más detalles, por favor
+          consulte nuestros términos completos en nuestro sitio web.
+        </p>
+      </div>
+
+      <div class="signature">
+        <p>Firma del Cliente: ____________________________</p>
+        <p>Fecha: ____________________________</p>
+      </div>
+    </div>
+
+    <script>
+      // Aquí puedes agregar JavaScript para llenar dinámicamente los campos
+      document.getElementById('invoiceNumber').textContent = '0001';
+      document.getElementById('invoiceDate').textContent = new Date().toLocaleDateString();
+      document.getElementById('sender').textContent = 'Nombre de tu Empresa';
+      document.getElementById('recipient').textContent = 'Nombre del Cliente';
+      document.getElementById('description').textContent = 'Envío de paquete';
+      document.getElementById('price').textContent = '$50.00';
+      document.getElementById('amount').textContent = '$50.00';
+    </script>
+  </body>
+</html>
